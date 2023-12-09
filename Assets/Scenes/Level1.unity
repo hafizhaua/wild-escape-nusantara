@@ -2434,27 +2434,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2129238141 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6740950514043581451, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-  m_PrefabInstance: {fileID: 6740950514160889039}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &2129238153
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129238141}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.515, y: 1.320044}
-  m_Direction: 0
 --- !u!1001 &1183651705579200191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2916,18 +2895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2294839595311338330, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: m_Radius
-      value: 0.5162976
-      objectReference: {fileID: 0}
-    - target: {fileID: 2294839595311338330, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.008994579
-      objectReference: {fileID: 0}
-    - target: {fileID: 2294839595311338330, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.11523749
-      objectReference: {fileID: 0}
     - target: {fileID: 6740950514043581448, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2976,8 +2943,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2294839595311338330, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
 --- !u!1001 &8543646982752050617
 PrefabInstance:
