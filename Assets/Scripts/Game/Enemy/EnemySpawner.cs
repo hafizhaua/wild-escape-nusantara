@@ -8,10 +8,11 @@ public class EnemySpawner : MonoBehaviour
     private GameObject _enemyPrefab;
     [SerializeField]
     private float _minimumSpawnTime;
-    [SerializeField] 
+    [SerializeField]
     private float _maximumSpawnTime;
 
     private float _timeUntilSpawn;
+    private int countSpawnedEnemies;
 
     private void Awake()
     {
@@ -23,15 +24,21 @@ public class EnemySpawner : MonoBehaviour
     {
         _timeUntilSpawn -= Time.deltaTime;
 
-        if(_timeUntilSpawn <= 0)
+        if (_timeUntilSpawn <= 0 && countCurrentEnemies() < 8)
         {
             Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
             SetTimeUntilSpawn();
+            countCurrentEnemies();
         }
     }
 
     private void SetTimeUntilSpawn()
     {
         _timeUntilSpawn = Random.Range(_minimumSpawnTime, _maximumSpawnTime);
+    }
+
+    private int countCurrentEnemies()
+    {
+        return countSpawnedEnemies++;
     }
 }

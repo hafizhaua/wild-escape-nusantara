@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
+
+    
     void Awake()
     {
         // Find game manager in each scenes
         int numGameManager = FindObjectsOfType<GameManager>().Length;
-
         if (numGameManager > 1)
         {
             Destroy(this.gameObject);
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         playerLives--;
 
+        // Reset current scene
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }

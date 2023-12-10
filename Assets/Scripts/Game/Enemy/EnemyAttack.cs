@@ -13,11 +13,11 @@ public class EnemyAttack : MonoBehaviour
         healthController = GetComponent<HealthController>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.GetComponent<PlayerMovement>())
+        if (other.gameObject.GetComponent<PlayerMovement>())
         {
-            var playerHealthController = collision.gameObject.GetComponent<HealthController>();
+            var playerHealthController = other.gameObject.GetComponent<HealthController>();
             playerHealthController.TakeDamage(_damageAmount);
         }
     }

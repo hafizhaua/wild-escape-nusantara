@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float _reductionAmount = 120f;
     private Vector2 _direction = Vector2.up;
 
+    private bool isAlive = true;
 
 
     private void Awake()
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive) return;
+
         SetPlayerVelocity();
         RotateInDirectionOfInput();
         SetAnimation();
@@ -103,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue inputValue)
     {
+        if (!isAlive) return;
+
         _movementInput = inputValue.Get<Vector2>();
 
         if (_movementInput != Vector2.zero)
@@ -116,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = Vector2.zero;
     }
 
+    // Slow when in water
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Water")
