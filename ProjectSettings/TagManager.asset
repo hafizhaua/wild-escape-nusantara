@@ -7,6 +7,8 @@ TagManager:
   - Exit
   - Coin
   - Box
+  - Enemy
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -49,6 +51,9 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 750881845
+    locked: 0
+  - name: Water
+    uniqueID: 27583667
     locked: 0
   - name: Player
     uniqueID: 3525706343
