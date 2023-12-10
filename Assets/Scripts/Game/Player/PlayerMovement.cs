@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private float _rotationSpeed;
     [SerializeField]
     private float _screenBorder;
+    private float _reductionAmount = 120f;
 
 
 
@@ -40,8 +41,22 @@ public class PlayerMovement : MonoBehaviour
     private void SetAnimation()
     {
         bool isMoving = _movementInput != Vector2.zero;
-
+        bool isPlayerMovementHorizontal = Mathf.Abs(_rigidbody.velocity.x) > Mathf.Epsilon; // Epsilon is way of 0 
         _animator.SetBool("isMoving", isMoving);
+
+        if (isMoving)
+        {
+            if (_movementInput.y > 0)
+                _animator.SetInteger("direction", 1);
+            if (_movementInput.y < 0)
+                _animator.SetInteger("direction", -1);
+            if (_movementInput.y == 0)
+                _animator.SetInteger("direction", 0);
+
+            // flip x 
+            if (isPlayerMovementHorizontal)
+                transform.localScale = new Vector2(-Mathf.Sign(_rigidbody.velocity.x), 1f);
+        }
     }
     private void SetPlayerVelocity()
     {
@@ -59,10 +74,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 screenPosition = _camera.WorldToScreenPoint(transform.position);
 
-        if((screenPosition.x < _screenBorder && _rigidbody.velocity.x < 0) || (screenPosition.x > _camera.pixelWidth - _screenBorder && _rigidbody.velocity.x > 0))
+        if ((screenPosition.x < _screenBorder && _rigidbody.velocity.x < 0) || (screenPosition.x > _camera.pixelWidth - _screenBorder && _rigidbody.velocity.x > 0))
         {
             _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
-        } else if ((screenPosition.y < _screenBorder && _rigidbody.velocity.y < 0) || (screenPosition.y > _camera.pixelHeight - _screenBorder && _rigidbody.velocity.y > 0))
+        }
+        else if ((screenPosition.y < _screenBorder && _rigidbody.velocity.y < 0) || (screenPosition.y > _camera.pixelHeight - _screenBorder && _rigidbody.velocity.y > 0))
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
         }
@@ -84,5 +100,20 @@ public class PlayerMovement : MonoBehaviour
         _movementInput = inputValue.Get<Vector2>();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Water")
+        {
+            _rigidbody.drag = _reductionAmount;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Water")
+        {
+            _rigidbody.drag = 0f;
+        }
+    }
 
 }

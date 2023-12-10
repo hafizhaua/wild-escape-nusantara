@@ -9,7 +9,7 @@ public class EnemyScoreAllocator : MonoBehaviour
 
     private ScoreController _scoreController;
 
-    private void Awake()
+    private void Start()
     {
         _scoreController = FindObjectOfType<ScoreController>();
     }

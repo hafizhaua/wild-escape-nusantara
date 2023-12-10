@@ -531,7 +531,6 @@ GameObject:
   - component: {fileID: 1517393413}
   - component: {fileID: 1517393415}
   - component: {fileID: 1517393414}
-  - component: {fileID: 1517393419}
   - component: {fileID: 1517393418}
   m_Layer: 4
   m_Name: Water Tilemap
@@ -594,7 +593,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 27583667
-  m_SortingLayer: -3
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.007936537, y: 0.007936537, z: 0}
@@ -834,18 +833,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
---- !u!114 &1517393419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517393412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a9ab4ecde0df3479da8879063f60af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1576864865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,7 +2893,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6229128571568477282, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6229128571568477282, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3050,7 +3037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3640055890196576440, guid: 33f005edb6403df4aae802028e204aa4, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3640055890196576440, guid: 33f005edb6403df4aae802028e204aa4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3214,6 +3201,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5827409132693289456, guid: c14c4a7730aeac1408cf750a44926c3c, type: 3}
+      propertyPath: m_SortingLayer
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5827409132693289456, guid: c14c4a7730aeac1408cf750a44926c3c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1152869953
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14c4a7730aeac1408cf750a44926c3c, type: 3}
 --- !u!1001 &6470066636646198550
@@ -3267,6 +3262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2098869303000490985, guid: acca6955a6d96c740938868fea85d053, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3262245974540257471, guid: acca6955a6d96c740938868fea85d053, type: 3}
       propertyPath: m_Name
       value: Target
@@ -3286,7 +3285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740950514043581448, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6740950514043581448, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: m_LocalPosition.x

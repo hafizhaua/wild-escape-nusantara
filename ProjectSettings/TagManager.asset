@@ -46,14 +46,14 @@ TagManager:
   - name: Background
     uniqueID: 3781749821
     locked: 0
+  - name: Water
+    uniqueID: 27583667
+    locked: 0
   - name: Enemy
     uniqueID: 3142097343
     locked: 0
   - name: Interactables
     uniqueID: 750881845
-    locked: 0
-  - name: Water
-    uniqueID: 27583667
     locked: 0
   - name: Player
     uniqueID: 3525706343
