@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _screenBorder;
     private float _reductionAmount = 120f;
+    private Vector2 _direction = Vector2.up;
 
 
 
@@ -36,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         SetPlayerVelocity();
         RotateInDirectionOfInput();
         SetAnimation();
+    }
+
+    public Vector2 GetDirection()
+    {
+        return _direction.normalized;
     }
 
     private void SetAnimation()
@@ -98,6 +104,16 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         _movementInput = inputValue.Get<Vector2>();
+
+        if (_movementInput != Vector2.zero)
+        {
+            _direction = _movementInput;
+        }
+    }
+
+    public void StopPlayer()
+    {
+        _rigidbody.velocity = Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

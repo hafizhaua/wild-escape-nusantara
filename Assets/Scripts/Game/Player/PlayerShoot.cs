@@ -20,6 +20,13 @@ public class PlayerShoot : MonoBehaviour
     private bool _fireContinuously;
     private bool _fireSingle;
     private float _lastFireTime;
+    private PlayerMovement _playerMovement;
+
+
+    private void Awake()
+    {
+        _playerMovement = GetComponent<PlayerMovement>();
+    }
 
 
     // Update is called once per frame
@@ -45,7 +52,7 @@ public class PlayerShoot : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
 
-        rigidbody.velocity = _bulletSpeed * transform.up;
+        rigidbody.velocity = _bulletSpeed * _playerMovement.GetDirection();
     }
 
     private void OnFire(InputValue inputValue)
