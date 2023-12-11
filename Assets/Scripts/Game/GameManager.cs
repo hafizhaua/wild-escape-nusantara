@@ -86,4 +86,9 @@ public class GameManager : MonoBehaviour
         // Update UI
         scoreText.text = totalScore.ToString();
     }
+
+    public void ResetScore()
+    {
+        totalScore = 0;
+    }
 }
