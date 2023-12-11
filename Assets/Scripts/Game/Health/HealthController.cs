@@ -28,24 +28,26 @@ public class HealthController : MonoBehaviour
         if (_currentHealth == 0)
         {
             return;
-        } 
+        }
 
         if (IsInvincible)
         {
             return;
         }
-        
+
         _currentHealth -= damageAmount;
         OnHealthChanged.Invoke();
-        
-        if (_currentHealth < 0){
+
+        if (_currentHealth < 0)
+        {
             _currentHealth = 0;
         }
 
         if (_currentHealth == 0)
         {
             OnDied.Invoke();
-        } else
+        }
+        else
         {
             OnDamaged.Invoke();
         }
@@ -58,8 +60,8 @@ public class HealthController : MonoBehaviour
         _currentHealth += amountToAdd;
         OnHealthChanged.Invoke();
 
-        if (_currentHealth > _maximumHealth) 
-        { 
+        if (_currentHealth > _maximumHealth)
+        {
             _currentHealth = _maximumHealth;
         }
     }

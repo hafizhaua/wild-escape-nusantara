@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class EnemyScoreAllocator : MonoBehaviour
 {
-    [SerializeField]
-    private int _killScore;
+    [SerializeField] public int killScore = 100;
 
-    private ScoreController _scoreController;
-
-    private void Start()
+    public void AddKillScore()
     {
-        _scoreController = FindObjectOfType<ScoreController>();
+        FindObjectOfType<GameManager>().AddScore(killScore);
     }
 
-    public void AllocateScore()
-    {
-        _scoreController.AddScore(_killScore);
-    }
 }

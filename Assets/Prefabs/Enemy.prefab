@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1152869953
-  m_SortingLayer: -4
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1349870099, guid: 84c5de726024c5841ac04d1728089b56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,11 +100,11 @@ GameObject:
   - component: {fileID: 1115757921458304221}
   - component: {fileID: 4754620445760684544}
   - component: {fileID: 969155416755039181}
+  - component: {fileID: 3932712775239485033}
   - component: {fileID: 2191167169750802940}
-  - component: {fileID: 3067741284761438606}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,6 +241,18 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3932712775239485033}
+        m_TargetAssemblyTypeName: EnemyScoreAllocator, Assembly-CSharp
+        m_MethodName: AddKillScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4754620445760684544}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -295,6 +307,19 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3932712775239485033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827409132737414247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ae3efa9dfad04e841a82e230ef025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killScore: 100
 --- !u!114 &2191167169750802940
 MonoBehaviour:
   m_ObjectHideFlags: 0

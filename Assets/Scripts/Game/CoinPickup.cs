@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CoinPickup : MonoBehaviour
 {
-
-    [SerializeField] private int scorePickup = 100;
+    [SerializeField] int score = 100;
     private bool wasCollected = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -13,7 +13,8 @@ public class CoinPickup : MonoBehaviour
         if (other.tag == "Player" && !wasCollected)
         {
             wasCollected = true;
-            // Nambah ke main score menggunakan scorePickup
+
+            FindObjectOfType<GameManager>().AddScore(score);
 
             this.gameObject.SetActive(false);
             Destroy(this.gameObject);
