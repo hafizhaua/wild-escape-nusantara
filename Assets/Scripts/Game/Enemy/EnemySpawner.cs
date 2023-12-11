@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     private float _minimumSpawnTime;
     [SerializeField]
     private float _maximumSpawnTime;
+    [SerializeField]
+    private float _maxEnemiesSpawned;
 
     private float _timeUntilSpawn;
     private int countSpawnedEnemies;
@@ -24,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _timeUntilSpawn -= Time.deltaTime;
 
-        if (_timeUntilSpawn <= 0 && countCurrentEnemies() < 8)
+        if (_timeUntilSpawn <= 0 && countCurrentEnemies() < _maxEnemiesSpawned)
         {
             Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
             SetTimeUntilSpawn();
