@@ -1,21 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] float sceneLoadDelay = 2f;
+    [SerializeField] float sceneLoadDelay = 1f;
 
-    GameManager gameManager;
-    void Awake()
+    public void LoadLatestLevel()
     {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
-    public void LoadGame()
-    {
-
         SceneManager.LoadScene("Level1");
     }
 

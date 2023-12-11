@@ -2,27 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int playerLives = 3;
-    [SerializeField] TextMeshProUGUI livesText;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] public int playerLives { get; private set; } = 1;
+    public int totalScore { get; private set; } = 0;
 
-    private int totalScore = 0;
+    public static GameManager _instance { get; private set; }
 
-    private static GameManager _instance;
+    private UnityEvent<int> OnScoreChanged;
+    private UnityEvent<int> OnLivesChanged;
 
-    public static GameManager Instance
-    {
-        get { return _instance; }
-    }
 
     void Awake()
     {
-        // Find game manager in each scenes
+        // Singleton pattern
         if (_instance == null)
         {
             _instance = this;
@@ -30,15 +28,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }
 
     private void Start()
     {
-        // UI Update
-        livesText.text = $"Lives: {playerLives}";
-        scoreText.text = totalScore.ToString();
+
     }
 
     public void ProcessPlayerDeath()
@@ -56,23 +53,19 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ResetToFirstScene();
+            ResetToGameOver();
         }
     }
 
-    private void ResetToFirstScene()
+    private void ResetToGameOver()
     {
-        // Back to first scene
-        SceneManager.LoadScene(0);
-        Destroy(this.gameObject);
+        // Go to Game Over
+        SceneManager.LoadScene("GameOver");
     }
 
     private void TakeLife()
     {
         playerLives--;
-
-        // UI Update
-        livesText.text = $"Lives: {playerLives}";
 
         // Reset current scene
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -82,9 +75,6 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         totalScore += score;
-
-        // Update UI
-        scoreText.text = totalScore.ToString();
     }
 
     public void ResetScore()
