@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D _rigidbody;
-    private Animator _animator;
+    protected Animator _animator;
     private CapsuleCollider2D _collider;
-    private Vector2 _movementInput;
+    protected Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
     private Vector2 _movementInputSmoothVelocity;
     private Camera _camera;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _screenBorder;
     private float _reductionAmount = 120f;
-    private Vector2 _direction = Vector2.up;
+    protected Vector2 _direction = Vector2.up;
 
     private bool isAlive = true;
 
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMove(InputValue inputValue)
+    protected void OnMove(InputValue inputValue)
     {
         if (!isAlive) return;
 
