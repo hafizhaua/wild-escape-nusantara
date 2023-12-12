@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class RogerSkill : PlayerMovement
 {
+    [SerializeField]
+    private float _pounceDamage;
     private float _distance = 3f;
     private float _duration = 0.5f;
     private bool isDashing = false;
@@ -15,7 +17,18 @@ public class RogerSkill : PlayerMovement
     {
         _animator = GetComponent<Animator>();
     }
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (isDashing)
+        {
+            if (other.gameObject.GetComponent<EnemyMovement>())
+            {
+                var enemyHealthController = other.gameObject.GetComponent<HealthController>();
+                enemyHealthController.TakeDamage(_pounceDamage);
+                // Debug.Log("Tabrakan");
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,24 +51,22 @@ public class RogerSkill : PlayerMovement
         // Calculate the target position based on the dash distance
         Vector2 targetPosition;
         Vector2 swappedDirection = new Vector2(_direction.y, _direction.x);
-        
+
         if (_movementInput.magnitude > 0.0001f)
         {
             targetPosition = startPosition + _movementInput * _distance;
         }
         else
         {
-            Debug.Log("Sedang Diam");
             targetPosition = startPosition + _direction * _distance;
-            Debug.Log("Target Position di dalam else: " + targetPosition);
         }
-        Debug.Log("Direction: " + _direction);
-        Debug.Log("Swapped Direction: " + swappedDirection);
-        Debug.Log("Movement Input: " + _movementInput);
-        Debug.Log("Dash Distance: " + _distance);
-        Debug.Log("Start Position: " + startPosition);
-        Debug.Log("Target Position: " + targetPosition);
-        Debug.Log("Calculated Distance: " + Vector3.Distance(startPosition, targetPosition));
+        // Debug.Log("Direction: " + _direction);
+        // Debug.Log("Swapped Direction: " + swappedDirection);
+        // Debug.Log("Movement Input: " + _movementInput);
+        // Debug.Log("Dash Distance: " + _distance);
+        // Debug.Log("Start Position: " + startPosition);
+        // Debug.Log("Target Position: " + targetPosition);
+        // Debug.Log("Calculated Distance: " + Vector3.Distance(startPosition, targetPosition));
 
 
         // Record the start time
