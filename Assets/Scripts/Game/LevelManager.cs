@@ -8,9 +8,19 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] float sceneLoadDelay = 1f;
 
+    private void Awake()
+    {
+        
+    }
+
     public void LoadLatestLevel()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void LoadSceneByName(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 
     public void LoadMainMenu()

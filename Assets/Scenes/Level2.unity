@@ -180,17 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9b5703256f89e4987e0e983f11e7e7, type: 3}
---- !u!114 &332614616 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 332614616, guid: 8c9b5703256f89e4987e0e983f11e7e7, type: 3}
-  m_PrefabInstance: {fileID: 332614612}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e041582dde0cb35459c90fd9ec69ed95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &532574033
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 5430194554926537538, guid: dbcbba600fea513479a141fcdad61f5e, type: 3}
       propertyPath: onPickedUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 332614616}
+      objectReference: {fileID: 0}
     - target: {fileID: 5430194554926537538, guid: dbcbba600fea513479a141fcdad61f5e, type: 3}
       propertyPath: onPickedUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddScore
@@ -428,6 +417,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14c4a7730aeac1408cf750a44926c3c, type: 3}
+--- !u!1001 &1038128322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 300.11328
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 175.55434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.772858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066762, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866639064657066764, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+--- !u!114 &1038128323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4866639064657066765, guid: 443befe5b76269e40adbc6a8af85e076, type: 3}
+  m_PrefabInstance: {fileID: 1038128322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d600ba4e5ee8fb14fb2285ff60b319cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1133721267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2703,6 +2760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6432984837602000064, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1038128323}
     - target: {fileID: 8560011169048631384, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2854,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 1933332851205953653, guid: 2523a094a7fc69d48b76189e58b49504, type: 3}
       propertyPath: onPickedUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 332614616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1933332851205953653, guid: 2523a094a7fc69d48b76189e58b49504, type: 3}
       propertyPath: onPickedUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddScore
