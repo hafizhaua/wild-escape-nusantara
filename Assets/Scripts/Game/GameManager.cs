@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager _instance { get; private set; }
 
-    private UnityEvent<int> OnScoreChanged;
-    private UnityEvent<int> OnLivesChanged;
+
 
 
     void Awake()
