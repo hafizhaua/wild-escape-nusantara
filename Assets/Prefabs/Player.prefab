@@ -511,6 +511,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab18d3c818342f439f3e1994b5cfb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
+  _rotationSpeed: 0
+  _screenBorder: 0
+  onSkillUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 640330806}
+        m_TargetAssemblyTypeName: PlayerDamagedInvincibility, Assembly-CSharp
+        m_MethodName: StartInvincibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8056767858823557081
 GameObject:
   m_ObjectHideFlags: 0
