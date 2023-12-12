@@ -11,6 +11,8 @@ public class RogerSkill : PlayerMovement
     private float _distance = 3f;
     private float _duration = 0.5f;
     private bool isDashing = false;
+    private float _pounceCooldown = 5f;  // Cooldown time in seconds
+    private float _remainingCooldown = 5f;
     public UnityEvent onSkillUsed;
     // Start is called before the first frame update
     void Start()
@@ -23,20 +25,25 @@ public class RogerSkill : PlayerMovement
         {
             if (other.gameObject.GetComponent<EnemyMovement>())
             {
+                // Debug.Log("Tabrakan");
                 var enemyHealthController = other.gameObject.GetComponent<HealthController>();
                 enemyHealthController.TakeDamage(_pounceDamage);
-                // Debug.Log("Tabrakan");
             }
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _remainingCooldown <= 0)
         {
             _animator.SetTrigger("attack");
             onSkillUsed.Invoke();
             StartCoroutine(Dash());
+            _remainingCooldown = _pounceCooldown;  // Start cooldown
+        }
+        if (_remainingCooldown > 0)
+        {
+            _remainingCooldown -= Time.deltaTime;
         }
     }
 

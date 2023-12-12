@@ -464,17 +464,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6740950514043581448, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
   m_PrefabInstance: {fileID: 6740950514160889039}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &184948937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 640330806, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-  m_PrefabInstance: {fileID: 6740950514160889039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598f8573661422c4aab1f9b30045195c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &587123209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3671,6 +3660,10 @@ PrefabInstance:
       propertyPath: OnDied.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 640330804, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6740950514043581448, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3721,7 +3714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740950514160889041, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6740950514160889041, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3732,32 +3725,8 @@ PrefabInstance:
       value: UpdateHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 184948937}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartInvincibility
-      objectReference: {fileID: 0}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerDamagedInvincibility, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
-      propertyPath: onSkillUsed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: _pounceDamage
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
