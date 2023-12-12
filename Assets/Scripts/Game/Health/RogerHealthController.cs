@@ -27,18 +27,15 @@ public class RogerHealthController : HealthController
     }
     public void Update()
     {
-        // Debug.Log("Update method is being called!");
-        // ... rest of your code
-        // Check if enough time has passed to start regeneration
         if (Time.time > _regenerationTimer)
         {
             // Start health regeneration
-            Debug.Log("It should regenerate!");
+            // Debug.Log("It should regenerate!");
             Regenerate();
         }
         else
         {
-            Debug.Log("Not Yet!");
+            // Debug.Log("Not Yet!");
         }
 
     }

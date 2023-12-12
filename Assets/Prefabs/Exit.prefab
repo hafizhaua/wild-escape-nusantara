@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4958354024651520074}
   - component: {fileID: 4958354024651520075}
-  - component: {fileID: 7210920441570324806}
+  - component: {fileID: 8734969795432652340}
   - component: {fileID: 1697168075595600037}
   m_Layer: 7
   m_Name: Exit
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 750881845
-  m_SortingLayer: -2
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8862ec198dfb7634898f04a94584fff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7210920441570324806
+--- !u!114 &8734969795432652340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

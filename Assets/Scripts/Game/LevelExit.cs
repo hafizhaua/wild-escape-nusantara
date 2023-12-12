@@ -25,11 +25,15 @@ public class LevelExit : MonoBehaviour
 
         int nextSceneIndex = currentIndex + 1;
 
-        if (!SceneManager.GetSceneAt(nextSceneIndex).name.Contains("Level"))
+
+        // 2 for not-level scenes
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings - 2)
         {
             nextSceneIndex = 0;
         }
 
         SceneManager.LoadScene(nextSceneIndex);
     }
+
+    // UtilityClasses
 }
