@@ -35,9 +35,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void UpdateTargetDirection()
     {
-
         HandleRandomDirectionChange();
-        HandlePlayerTargeting();
+        /*HandlePlayerTargeting();*/
         HandleEnemyOffScreen();
     }
 
@@ -62,6 +61,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void TargetToPlayer()
+    {
+        _targetDirection = _playerAwarenessController.DirectionToPlayer;
+    }
+
     private void HandleEnemyOffScreen()
     {
         Vector2 screenPosition = _camera.WorldToScreenPoint(transform.position);
@@ -84,6 +88,10 @@ public class EnemyMovement : MonoBehaviour
             Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
 
             _rigidbody.SetRotation(rotation);
+            Debug.Log(_targetDirection.magnitude);
+        } else
+        {
+            Debug.Log("Enemy is heading to you.");
         }
     }
 
@@ -93,6 +101,11 @@ public class EnemyMovement : MonoBehaviour
         {
             _rigidbody.velocity = transform.up * _speed;
         }
+    }
+
+    public void StopMove()
+    {
+        _rigidbody.velocity = Vector2.zero;
     }
 }
 
