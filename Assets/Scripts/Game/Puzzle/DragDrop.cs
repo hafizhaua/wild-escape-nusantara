@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
+    [SerializeField] private PuzzleSO puzzle;
 
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
@@ -15,6 +16,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void Start()
+    {
+        if (!puzzle.isPuzzleCollected)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

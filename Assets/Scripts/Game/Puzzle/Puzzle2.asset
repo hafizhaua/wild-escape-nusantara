@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleIndex: Level2
   puzzleImage: {fileID: 21300000, guid: 431e3b24924d88049bfb8362fd6d711e, type: 3}
-  isPuzzleCollected: 0
+  isPuzzleCollected: 1
