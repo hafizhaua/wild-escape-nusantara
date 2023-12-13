@@ -735,17 +735,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1224219443 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1224219443, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
-  m_PrefabInstance: {fileID: 8560011168655752666}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cbfa1138efb2f148bf0c1f74894397b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1517393412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,7 +3265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7240260488515607985, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 8818268053887022697, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
       propertyPath: m_Name
@@ -3543,34 +3532,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1224219443}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PopUpPuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIPuzzle, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 504295946567288432, guid: acca6955a6d96c740938868fea85d053, type: 3}
-      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1910979635835682960, guid: acca6955a6d96c740938868fea85d053, type: 3}
       propertyPath: m_RootOrder
       value: 6
