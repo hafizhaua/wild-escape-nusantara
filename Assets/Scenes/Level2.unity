@@ -6121,6 +6121,50 @@ PrefabInstance:
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateHealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1829264620}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1829264619}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateCooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateCooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CooldownUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CooldownUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530042352963310525, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
+      propertyPath: onUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a12756077983e14d8be38822ecb38f7, type: 3}
 --- !u!1001 &1363170262
@@ -6452,6 +6496,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1734197452, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
   m_PrefabInstance: {fileID: 1829264616}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1829264619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 44851889807048205, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
+  m_PrefabInstance: {fileID: 1829264616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4ba603e103cce44b8ce1879217e8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1829264620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7809226906152895657, guid: 8f3e35e93da7bd3419ddcd492b090578, type: 3}
+  m_PrefabInstance: {fileID: 1829264616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4ba603e103cce44b8ce1879217e8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1898781671
 PrefabInstance:
   m_ObjectHideFlags: 0
