@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] public int playerLives = 1;
     [SerializeField] public List<PuzzleSO> puzzles;
+    [SerializeField] public List<Scene> levelScenes;
 
     public int totalScore { get; private set; } = 0;
     public static GameManager _instance { get; private set; }

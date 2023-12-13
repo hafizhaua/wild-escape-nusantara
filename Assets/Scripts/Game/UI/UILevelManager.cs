@@ -2,20 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UILevelManager : MonoBehaviour
 {
 
-    [SerializeField] public List<TextMeshProUGUI> puzzleTexts;
+    [SerializeField] public List<Sprite> puzzleSprites;
+    [SerializeField] public List<GameObject> puzzlePlaceholder;
+
+    private List<string> levels = new List<string>()
+    {
+        "Level1","Level2","Level3","Level4",
+    };
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        puzzleTexts[0].text = FindObjectOfType<GameManager>().getPuzzleByIndex("Level1").isPuzzleCollected.ToString();
+        int i = 0;
+        foreach (var level in levels)
+        {
+            if (!FindObjectOfType<GameManager>().getPuzzleByIndex(level).isPuzzleCollected)
+            {
+                puzzlePlaceholder[i].SetActive(false);
+            }
+
+            i++;
+        }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
 

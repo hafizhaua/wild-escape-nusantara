@@ -3264,15 +3264,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7240260488515607985, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
-      propertyPath: m_Mass
-      value: 700
+      propertyPath: m_LinearDrag
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240260488515607985, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8818268053887022697, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
       propertyPath: m_Name
-      value: Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818268053887022697, guid: 47b1b53cb8b9b9342a9421d22fe8271f, type: 3}
-      propertyPath: m_TagString
       value: Box
       objectReference: {fileID: 0}
     m_RemovedComponents: []

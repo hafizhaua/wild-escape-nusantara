@@ -10,7 +10,7 @@ public class PuzzleController : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] public PuzzleSO existingPuzzle;
-    private PuzzleSO collectedPuzzle;
+    public PuzzleSO collectedPuzzle { get; private set; }
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PuzzleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -44,7 +44,6 @@ public class PuzzleController : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         existingPuzzle.GetPuzzleInfo();
         collectedPuzzle.isPuzzleCollected = true;
-
     }
 
     private void UncollectPuzzle()
