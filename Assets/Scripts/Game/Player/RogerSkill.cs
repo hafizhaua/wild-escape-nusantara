@@ -11,7 +11,9 @@ public class RogerSkill : PlayerMovement
 
     [SerializeField]
     private GameObject _ringPrefab;
-    [SerializeField]
+
+
+
     private float _roarRadius;
     private float _distance = 3f;
     private float _duration = 0.5f;
@@ -21,16 +23,25 @@ public class RogerSkill : PlayerMovement
 
 
     public UnityEvent onSkillUsed;
+    public UnityEvent onUpdate;
 
     public class Cooldowns
     {
         public float pounce;
         public float roar;
     }
+    public class RemainingCooldownPercentage
+    {
+        public float pounce;
+        public float roar;
+    }
     public Cooldowns remainingCooldown;
+    public RemainingCooldownPercentage remainingCooldownPercentage;
+
     // Start is called before the first frame update
     void Start()
     {
+        remainingCooldownPercentage = new RemainingCooldownPercentage();
         remainingCooldown = new Cooldowns();
         remainingCooldown.pounce = _pounceCooldown;
         remainingCooldown.roar = _roarCooldown;
@@ -72,6 +83,16 @@ public class RogerSkill : PlayerMovement
         if (remainingCooldown.roar > 0)
         {
             remainingCooldown.roar -= Time.deltaTime;
+        }
+        remainingCooldownPercentage.roar = remainingCooldown.roar / _roarCooldown;
+        remainingCooldownPercentage.pounce = remainingCooldown.pounce / _pounceCooldown;
+        if (onUpdate != null)
+        {
+            onUpdate.Invoke();
+        }
+        else
+        {
+            Debug.LogError("onUpdate is not assigned!");
         }
     }
 

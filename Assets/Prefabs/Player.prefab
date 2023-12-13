@@ -516,7 +516,6 @@ MonoBehaviour:
   _screenBorder: 0
   _pounceDamage: 4
   _ringPrefab: {fileID: 1270913590547985341, guid: bb4fef5ade5a6ce4f95720c408e81f29, type: 3}
-  _roarRadius: 5
   onSkillUsed:
     m_PersistentCalls:
       m_Calls:
@@ -527,6 +526,21 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
