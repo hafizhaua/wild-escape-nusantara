@@ -26,7 +26,7 @@ public class LevelExit : MonoBehaviour
 
 
         // 2 for not-level scenes
-        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings - 3)
+        if (nextSceneIndex < 4)
         {
             nextSceneIndex = 0;
         }
