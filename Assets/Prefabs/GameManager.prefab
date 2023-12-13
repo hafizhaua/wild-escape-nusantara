@@ -47,6 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041582dde0cb35459c90fd9ec69ed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 1
+  puzzles:
+  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
 --- !u!114 &2788149907510993457
 MonoBehaviour:
   m_ObjectHideFlags: 0

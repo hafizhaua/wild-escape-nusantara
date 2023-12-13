@@ -9,12 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public int playerLives { get; private set; } = 1;
+    [SerializeField] public int playerLives = 1;
+    [SerializeField] public List<PuzzleSO> puzzles;
+
     public int totalScore { get; private set; } = 0;
-
     public static GameManager _instance { get; private set; }
-
-
 
 
     void Awake()
@@ -34,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
     }
 
     public void ProcessPlayerDeath()
@@ -79,5 +77,11 @@ public class GameManager : MonoBehaviour
     public void ResetScore()
     {
         totalScore = 0;
+    }
+
+    // Puzzle Manager
+    public PuzzleSO getPuzzleByIndex(string index)
+    {
+        return puzzles.Find(puzzle => puzzle.puzzleIndex == index);
     }
 }

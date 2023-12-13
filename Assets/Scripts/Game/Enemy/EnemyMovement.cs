@@ -88,10 +88,10 @@ public class EnemyMovement : MonoBehaviour
             Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
 
             _rigidbody.SetRotation(rotation);
-            Debug.Log(_targetDirection.magnitude);
+            // Debug.Log(_targetDirection.magnitude);
         } else
         {
-            Debug.Log("Enemy is heading to you.");
+            // Debug.Log("Enemy is heading to you.");
         }
     }
 
