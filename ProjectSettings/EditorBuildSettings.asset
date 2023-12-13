@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 09bff331cd3f1334487b9f64c8d85d4d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: af852481ea94ef04792b151c393f9655
+  - enabled: 1
+    path: Assets/Scenes/ChooseLevels.unity
+    guid: 7e0ebbe50f3628f42ae2faf6c6af043f
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -20,13 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: c9f774dc8308e2b459900c8deb241b9c
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 09bff331cd3f1334487b9f64c8d85d4d
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: af852481ea94ef04792b151c393f9655
-  - enabled: 1
-    path: Assets/Scenes/ChooseLevels.unity
-    guid: 7e0ebbe50f3628f42ae2faf6c6af043f
   m_configObjects: {}
