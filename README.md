@@ -5,10 +5,6 @@
    🐅 Wild Escape - Nusantara
 </h1>
 
-## Project Title
-
-**Wild Escape: Nusantara**
-
 ## Description
 
 Wild Escape: Nusantara is an adventurous and educational game set in various provinces of Indonesia, where players take on the roles of different endangered animals attempting to escape from the clutches of powerful poachers.
@@ -17,8 +13,6 @@ Wild Escape: Nusantara is an adventurous and educational game set in various pro
 
 - [About Us](#about-us)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## About Us
 
@@ -28,14 +22,14 @@ Wild Escape: Nusantara is an adventurous and educational game set in various pro
 
 ## Usage
 
-**Note:** The latest executable can be found in the [Release](./Release) folder.
+**Note:** The latest executable can be found in the [Release](https://github.com/hafizhaua/wild-escape-nusantara/releases/tag/v1) folder.
 
 ### Executable Location
 
-Download the latest executable from the [Release](./Release) folder and follow these steps:
+Download the latest executable from the [Release](https://github.com/hafizhaua/wild-escape-nusantara/releases/tag/v1) folder and follow these steps:
 
-1. Navigate to the [Release](./Release) folder.
-2. Download the executable file (`your_game.exe`).
+1. Navigate to the [Release](https://github.com/hafizhaua/wild-escape-nusantara/releases/tag/v1) folder.
+2. Download the executable file
 3. Run the executable to launch the game.
 
 ### Running the Game Locally in Unity
