@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Water
   - GameManager
+  - PuzzlePiece
   layers:
   - Default
   - TransparentFX
