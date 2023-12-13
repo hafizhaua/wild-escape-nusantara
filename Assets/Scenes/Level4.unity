@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4549600117884462867, guid: 8c9b5703256f89e4987e0e983f11e7e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8646422088327561642, guid: 8c9b5703256f89e4987e0e983f11e7e7, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -6050,7 +6054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3564049301788810566, guid: 87d79a6c8f0e86443ae2486fa0928145, type: 3}
       propertyPath: _maxEnemiesSpawned
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87d79a6c8f0e86443ae2486fa0928145, type: 3}
