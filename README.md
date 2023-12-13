@@ -1,4 +1,9 @@
-# GG Gimang - Game Development
+
+![Logo-01](https://github.com/hafizhaua/wild-escape-nusantara/assets/73093118/83f07088-5218-4b88-b9f1-691c065f07fd)
+
+<h1 align="center">
+   🐅 Wild Escape - Nusantara
+</h1>
 
 ## Project Title
 
@@ -83,3 +88,9 @@ If you want to build the executable to run the game outside of Unity, follow the
 **Note:** If you encounter any issues or errors during the setup process, refer to the [Unity Documentation](https://docs.unity.com/) or the project's specific documentation for troubleshooting.
 
 Feel free to customize these instructions based on the specific details of your Unity game project.
+
+<hr/>
+
+<p align="center">
+  Copyright 2023 - GG Gimang
+</p>
