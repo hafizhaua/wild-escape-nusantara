@@ -515,6 +515,8 @@ MonoBehaviour:
   _rotationSpeed: 0
   _screenBorder: 0
   _pounceDamage: 4
+  _ringPrefab: {fileID: 1270913590547985341, guid: bb4fef5ade5a6ce4f95720c408e81f29, type: 3}
+  _roarRadius: 5
   onSkillUsed:
     m_PersistentCalls:
       m_Calls:
