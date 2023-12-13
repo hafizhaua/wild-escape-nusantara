@@ -17,7 +17,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 _targetDirection;
     private float _changeDirectionCooldown;
     private Camera _camera;
-
+    private Vector2 _originalSpeed;
+    private bool _isSlowed;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -30,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     {
         UpdateTargetDirection();
         RotateTowardsTarget();
-        SetVelocity();
+        SetVelocity(_isSlowed);
     }
 
     private void UpdateTargetDirection()
@@ -43,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
     private void HandleRandomDirectionChange()
     {
         _changeDirectionCooldown -= Time.deltaTime;
-        if(_changeDirectionCooldown <= 0)
+        if (_changeDirectionCooldown <= 0)
         {
             float angleChange = Random.Range(-90f, 90f);
             Quaternion rotation = Quaternion.AngleAxis(angleChange, transform.forward);
@@ -89,23 +90,52 @@ public class EnemyMovement : MonoBehaviour
 
             _rigidbody.SetRotation(rotation);
             // Debug.Log(_targetDirection.magnitude);
-        } else
+        }
+        else
         {
-            // Debug.Log("Enemy is heading to you.");
+            Debug.Log("Enemy is heading to you.");
         }
     }
 
-    private void SetVelocity()
+    private void SetVelocity(bool _isSlowed)
     {
-        if (_targetDirection != Vector2.zero)
+        if (!_isSlowed)
         {
-            _rigidbody.velocity = transform.up * _speed;
+            if (_targetDirection != Vector2.zero)
+            {
+                _rigidbody.velocity = transform.up * _speed;
+            }
+        }
+        else
+        {
+            if (_targetDirection != Vector2.zero)
+            {
+                 _rigidbody.velocity = transform.up * _speed;
+                ApplySlow(0.5f);
+            }
         }
     }
 
     public void StopMove()
     {
         _rigidbody.velocity = Vector2.zero;
+    }
+
+    public void SetSlowed()
+    {
+        _isSlowed = true;
+        StartCoroutine(ResetSpeed());
+    }
+    public void ApplySlow(float factor)
+    {
+        _rigidbody.velocity *= factor;
+        Vector2 tempDebug = _rigidbody.velocity;
+    }
+
+    IEnumerator ResetSpeed()
+    {
+        yield return new WaitForSeconds(2);
+        _isSlowed = false;
     }
 }
 
