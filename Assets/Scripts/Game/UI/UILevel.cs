@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class UILevel : MonoBehaviour
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI levelName;
+    [SerializeField] GameObject popup;
+
     private GameManager gameManager;
 
     private void Awake()
@@ -37,5 +40,24 @@ public class UILevel : MonoBehaviour
     {
         SetLives(gameManager.playerLives);
         SetScore(gameManager.totalScore);
+
+
+    }
+
+    public void DisplayCollectedPuzzle()
+    {
+        if (FindObjectOfType<PuzzleController>().collectedPuzzle.isPuzzleCollected)
+        {
+            StartCoroutine(DisplayCollectPuzzle());
+        }
+    }
+
+    private IEnumerator DisplayCollectPuzzle()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        popup.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(2f);
+        popup.SetActive(false);
     }
 }

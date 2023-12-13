@@ -12,6 +12,8 @@ public class PuzzleController : MonoBehaviour
     [SerializeField] public PuzzleSO existingPuzzle;
     public PuzzleSO collectedPuzzle { get; private set; }
 
+    public UnityEvent onCollected;
+
     void Start()
     {
         collectedPuzzle = FindObjectOfType<GameManager>().getPuzzleByIndex(existingPuzzle.puzzleIndex);
@@ -42,8 +44,8 @@ public class PuzzleController : MonoBehaviour
     IEnumerator CollectPuzzle()
     {
         yield return new WaitForSecondsRealtime(1f);
-        existingPuzzle.GetPuzzleInfo();
         collectedPuzzle.isPuzzleCollected = true;
+        onCollected.Invoke();
     }
 
     private void UncollectPuzzle()

@@ -50,10 +50,10 @@ MonoBehaviour:
   playerLives: 1
   puzzles:
   - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
-  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
-  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
-  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
-  - {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  - {fileID: 11400000, guid: 7076de3f55ec848499a20bd2b75000b8, type: 2}
+  - {fileID: 11400000, guid: af9658605fe4a834cb420311a73489d1, type: 2}
+  - {fileID: 11400000, guid: d513d21c1e1e22b498c90546e8ecafc7, type: 2}
+  levelScenes: []
 --- !u!114 &2788149907510993457
 MonoBehaviour:
   m_ObjectHideFlags: 0

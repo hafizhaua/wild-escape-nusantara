@@ -24,6 +24,7 @@ public class UILevelManager : MonoBehaviour
             if (!FindObjectOfType<GameManager>().getPuzzleByIndex(level).isPuzzleCollected)
             {
                 puzzlePlaceholder[i].SetActive(false);
+                Debug.Log(puzzlePlaceholder[i]);
             }
 
             i++;

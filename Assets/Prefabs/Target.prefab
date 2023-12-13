@@ -124,4 +124,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2183ef6bbb5866489e63d480cf3fda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  existingPuzzle: {fileID: 11400000, guid: 9961c2d0ce978da4285428d7bb20ff95, type: 2}
+  existingPuzzle: {fileID: 11400000, guid: 7076de3f55ec848499a20bd2b75000b8, type: 2}
+  onCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UILevel, Assembly-CSharp
+        m_MethodName: DisplayCollectedPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
