@@ -10,22 +10,34 @@ public class RogerSkill : PlayerMovement
     private float _pounceDamage;
     private float _distance = 3f;
     private float _duration = 0.5f;
-    private bool isDashing = false;
+    private bool _isPouncing = false;
     private float _pounceCooldown = 5f;  // Cooldown time in seconds
-    private float _remainingCooldown = 5f;
+    private float _roarCooldown = 3f;  // Cooldown time in seconds
+
+    private float _roarRadius = 5f;
     public UnityEvent onSkillUsed;
+
+    public class Cooldowns
+    {
+        public float pounce;
+        public float roar;
+    }
+    public Cooldowns remainingCooldown;
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
+        remainingCooldown = new Cooldowns();
+        remainingCooldown.pounce = _pounceCooldown;
+        remainingCooldown.roar = _roarCooldown;
     }
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (isDashing)
+        if (_isPouncing)
         {
             if (other.gameObject.GetComponent<EnemyMovement>())
             {
-                // Debug.Log("Tabrakan");
                 var enemyHealthController = other.gameObject.GetComponent<HealthController>();
                 enemyHealthController.TakeDamage(_pounceDamage);
             }
@@ -34,23 +46,34 @@ public class RogerSkill : PlayerMovement
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _remainingCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && remainingCooldown.pounce <= 0)
         {
             _animator.SetTrigger("attack");
             onSkillUsed.Invoke();
-            StartCoroutine(Dash());
-            _remainingCooldown = _pounceCooldown;  // Start cooldown
+            StartCoroutine(Pounce());
+            remainingCooldown.pounce = _pounceCooldown;  // Start cooldown
         }
-        if (_remainingCooldown > 0)
+        if (Input.GetKeyDown(KeyCode.V) && remainingCooldown.roar <= 0)
         {
-            _remainingCooldown -= Time.deltaTime;
+            _animator.SetTrigger("attack");
+            onSkillUsed.Invoke();
+            TeritorialRoar();
+            remainingCooldown.roar = _roarCooldown;  // Start cooldown
+        }
+        if (remainingCooldown.pounce > 0)
+        {
+            remainingCooldown.pounce -= Time.deltaTime;
+        }
+        if (remainingCooldown.roar > 0)
+        {
+            remainingCooldown.roar -= Time.deltaTime;
         }
     }
 
-    IEnumerator Dash()
+    IEnumerator Pounce()
     {
         // Set the flag to prevent multiple dashes at the same time
-        isDashing = true;
+        _isPouncing = true;
 
         // Store the initial position of the player
         Vector2 startPosition = transform.position;
@@ -67,14 +90,6 @@ public class RogerSkill : PlayerMovement
         {
             targetPosition = startPosition + _direction * _distance;
         }
-        // Debug.Log("Direction: " + _direction);
-        // Debug.Log("Swapped Direction: " + swappedDirection);
-        // Debug.Log("Movement Input: " + _movementInput);
-        // Debug.Log("Dash Distance: " + _distance);
-        // Debug.Log("Start Position: " + startPosition);
-        // Debug.Log("Target Position: " + targetPosition);
-        // Debug.Log("Calculated Distance: " + Vector3.Distance(startPosition, targetPosition));
-
 
         // Record the start time
         float startTime = Time.time;
@@ -92,6 +107,22 @@ public class RogerSkill : PlayerMovement
         // Ensure that the final position is exactly the target position
         transform.position = targetPosition;
         // Reset the flag after the dash is complete
-        isDashing = false;
+        _isPouncing = false;
+    }
+
+    private void TeritorialRoar()
+    {
+        Debug.Log("Roar");
+        // Get all colliders within a certain radius of the player
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _roarRadius);
+        // Iterate through the colliders and apply the slow effect to enemies
+        foreach (var collider in colliders)
+        {
+            var enemyMovement = collider.gameObject.GetComponent<EnemyMovement>();
+            if (enemyMovement != null)
+            {
+                enemyMovement.SetSlowed();
+            }
+        }
     }
 }

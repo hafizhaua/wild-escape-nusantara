@@ -465,7 +465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740950514043581451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd4d0d8f2f7578b4da33e6985a270a2d, type: 3}
   m_Name: 
@@ -514,6 +514,7 @@ MonoBehaviour:
   _speed: 0
   _rotationSpeed: 0
   _screenBorder: 0
+  _pounceDamage: 4
   onSkillUsed:
     m_PersistentCalls:
       m_Calls:
