@@ -8,13 +8,18 @@ public class RogerSkill : PlayerMovement
 {
     [SerializeField]
     private float _pounceDamage;
+
+    [SerializeField]
+    private GameObject _ringPrefab;
+    [SerializeField]
+    private float _roarRadius;
     private float _distance = 3f;
     private float _duration = 0.5f;
     private bool _isPouncing = false;
     private float _pounceCooldown = 5f;  // Cooldown time in seconds
     private float _roarCooldown = 3f;  // Cooldown time in seconds
 
-    private float _roarRadius = 5f;
+
     public UnityEvent onSkillUsed;
 
     public class Cooldowns
@@ -72,7 +77,7 @@ public class RogerSkill : PlayerMovement
 
     IEnumerator Pounce()
     {
-        // Set the flag to prevent multiple dashes at the same time
+        // Set the flag to trigger when to damage enemy
         _isPouncing = true;
 
         // Store the initial position of the player
@@ -124,5 +129,26 @@ public class RogerSkill : PlayerMovement
                 enemyMovement.SetSlowed();
             }
         }
+
+        StartCoroutine(SpawnRing());
+    }
+
+    IEnumerator SpawnRing()
+    {
+        GameObject ring = Instantiate(_ringPrefab, transform.position, Quaternion.identity);
+        float elapsedTime = 0f;
+        float scalingTime = 0.5f;
+        while (elapsedTime < scalingTime)
+        {
+            float scale = Mathf.Lerp(0f, 5f, elapsedTime / scalingTime);
+            ring.transform.localScale = new Vector3(scale, scale, scale);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the final scale is exactly 5
+        ring.transform.localScale = new Vector3(5f, 5f, 1f);
+        Destroy(ring);
     }
 }
