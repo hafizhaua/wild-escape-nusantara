@@ -121,6 +121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Chaser Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1613663788174042481, guid: 87d79a6c8f0e86443ae2486fa0928145, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87d79a6c8f0e86443ae2486fa0928145, type: 3}
 --- !u!4 &2046840769953852775 stripped
@@ -182,6 +186,10 @@ PrefabInstance:
     - target: {fileID: 1613663788174042481, guid: 1a1de1107aedd6241bb1f99db8cd07ba, type: 3}
       propertyPath: m_Name
       value: Enemy Shooter Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613663788174042481, guid: 1a1de1107aedd6241bb1f99db8cd07ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1de1107aedd6241bb1f99db8cd07ba, type: 3}
