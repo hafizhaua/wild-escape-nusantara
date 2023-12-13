@@ -13,7 +13,6 @@ public class CooldownUI : MonoBehaviour
     public void UpdateCooldown()
     {
         RogerSkill rogerSkill = FindObjectOfType<RogerSkill>(); // Or obtain the reference in some other way
-        Debug.Log("Berhasil");
         _Cooldown1ForegroundImage.fillAmount = rogerSkill.remainingCooldownPercentage.pounce;
         _Cooldown2ForegroundImage.fillAmount = rogerSkill.remainingCooldownPercentage.roar;
     }

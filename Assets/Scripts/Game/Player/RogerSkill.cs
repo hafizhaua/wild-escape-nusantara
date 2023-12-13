@@ -135,22 +135,46 @@ public class RogerSkill : PlayerMovement
         // Reset the flag after the dash is complete
         _isPouncing = false;
     }
-
+    public string targetTag = "Enemy";
     private void TeritorialRoar()
     {
         Debug.Log("Roar");
         // Get all colliders within a certain radius of the player
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _roarRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 5);
         // Iterate through the colliders and apply the slow effect to enemies
+        // foreach (var collider in colliders)
+        // {
+        //     var enemyMovement = collider.GetComponent<EnemyMovement>();
+        //     if (enemyMovement != null)
+        //     {
+        //         Debug.Log("Found EnemyMovement on GameObject: " + collider);
+        //         enemyMovement.SetSlowed();
+        //     }
+        //     if (enemyMovement == null)
+        //     {
+        //         Debug.Log("No EnemyMovement component on GameObject: " + collider);
+        //     }
+        // }
+
         foreach (var collider in colliders)
         {
-            var enemyMovement = collider.gameObject.GetComponent<EnemyMovement>();
-            if (enemyMovement != null)
+            if (collider.CompareTag(targetTag))
             {
-                enemyMovement.SetSlowed();
+                // The GameObject has the specified tag
+                Debug.Log("Found GameObject with tag '" + targetTag + "': " + collider.gameObject.name);
+                var enemyMovement = collider.GetComponent<EnemyMovement>();
+                if (enemyMovement != null)
+                {
+                    // Debug.Log("Found EnemyMovement on GameObject: " + collider);
+                    enemyMovement.SetSlowed();
+                }
+                if (enemyMovement == null)
+                {
+                    Debug.Log("No EnemyMovement component on GameObject: " + collider);
+                }
+                
             }
         }
-
         StartCoroutine(SpawnRing());
     }
 
